@@ -11,7 +11,7 @@ A monitoring solution for Docker hosts and containers with [Prometheus](https://
 Clone this repository on your Docker host, cd into dockprom directory and run compose up:
 
 ```bash
-git clone https://github.com/stefanprodan/dockprom
+git clone https://github.com/alikasundara/dockprom
 cd dockprom
 
 ADMIN_USER=admin ADMIN_PASSWORD=admin docker-compose up -d
@@ -25,6 +25,7 @@ Prerequisites:
 Containers:
 
 * Prometheus (metrics database) `http://<host-ip>:9090`
+* pyhddtemp (hard drive temperature, not published yet, sorry) `http://pyhddtemp:16000`
 * Prometheus-Pushgateway (push acceptor for ephemeral and batch jobs) `http://<host-ip>:9091`
 * AlertManager (alerts management) `http://<host-ip>:9093`
 * Grafana (visualize metrics) `http://<host-ip>:3000`
