@@ -28,6 +28,11 @@ scrape_configs:
     static_configs:
       - targets: ['localhost:9090']
 
+  - job_name: 'hddtemp'
+    scrape_interval: 15s
+    static_configs:
+      - targets: ['192.168.77.74:16000']
+
   - job_name: 'pushgateway'
     scrape_interval: 10s
     honor_labels: true

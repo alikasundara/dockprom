@@ -10,6 +10,21 @@ volumes:
 
 services:
 
+  hddttemp:
+    image: 192.168.77.74:5000/pyhddtemp
+    container_name: pyhddtemp
+    cap_add:
+      - sys_rawio
+    devices:
+      - /dev/sda
+    restart: unless-stopped
+    expose:
+      - 16000
+    networks:
+      - monitor-net
+    labels:
+      org.label-schema.group: "monitoring"
+
   prometheus:
     image: prom/prometheus:v2.9.2
     container_name: prometheus
